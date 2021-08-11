@@ -29,7 +29,11 @@ func main() {
 		return countries[i].positiveCases < countries[j].positiveCases
 	})
 
+	fmt.Println(countries)
+
 	sort.Slice(countries, func(i, j int) bool {
 		return countries[i].name < countries[j].name
 	})
+	fmt.Println(countries)
+
 }
