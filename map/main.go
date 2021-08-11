@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	m := map[string]int{"Alice": 2, "Cecil": 1, "Bob": 3}
+	m := map[string]int{"USA": 200, "IND": 100, "JPN": 3}
 
 	keys := make([]string, 0, len(m))
 	for k := range m {
