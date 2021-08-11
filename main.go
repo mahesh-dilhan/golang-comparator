@@ -36,21 +36,30 @@ func main() {
 	})
 	fmt.Println(countries)
 
+	covidCounties := []Country{
+		{"USA", 100, 1},
+		{"IND", 10, 2},
+		{"SL", 10, 3},
+		{"ROC", 100, 4},
+		{"CAN", 10, 5},
+	}
+
+	sort.Sort(ByPositiveCases(covidCounties))
+	fmt.Println(covidCounties)
 }
 
 type Country struct {
-	name          string
-	positivecases int
-
-	index int
+	Name          string
+	PositiveCases int
+	index         int
 }
-type ByPositiveCases []*Country
+type ByPositiveCases []Country
 
-func (c *ByPositiveCases) Len() int {
-	return len(*c)
+func (c ByPositiveCases) Len() int {
+	return len(c)
 }
 func (c ByPositiveCases) Less(a, b int) bool {
-	return c[a].positivecases < c[b].positivecases
+	return c[a].PositiveCases < c[b].PositiveCases
 }
 
 func (c ByPositiveCases) Swap(a, b int) {
