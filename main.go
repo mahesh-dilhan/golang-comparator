@@ -37,3 +37,24 @@ func main() {
 	fmt.Println(countries)
 
 }
+
+type Country struct {
+	name          string
+	positivecases int
+
+	index int
+}
+type ByPositiveCases []*Country
+
+func (c *ByPositiveCases) Len() int {
+	return len(*c)
+}
+func (c ByPositiveCases) Less(a, b int) bool {
+	return c[a].positivecases < c[b].positivecases
+}
+
+func (c ByPositiveCases) Swap(a, b int) {
+	c[a], c[b] = c[b], c[a]
+	c[a].index = a
+	c[b].index = b
+}
