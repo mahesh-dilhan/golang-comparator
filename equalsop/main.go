@@ -37,4 +37,15 @@ func main() {
 
 	fmt.Println(cn == us)
 	fmt.Println(&cn, &us)
+
+	var m map[int]string = map[int]string{}
+	fmt.Println(m)
+	var n, q map[int]string
+
+	fmt.Println(n, q)
+	var i, o chan int
+	fmt.Println(i, o)
+
+	var r, t []string
+	fmt.Println(r, t)
 }
